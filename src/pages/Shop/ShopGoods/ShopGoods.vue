@@ -51,6 +51,7 @@
 
 
 <script>
+
   import BScroll from 'better-scroll'
   import {mapState} from 'vuex'
   import CartControl from '../../../components/CartControl/CartControl.vue'
@@ -170,7 +171,7 @@
   .goods
     display: flex
     position: absolute
-    top: 195px
+    top: 223px
     bottom: 46px
     width: 100%
     background: #fff;

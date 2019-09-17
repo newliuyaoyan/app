@@ -62,7 +62,7 @@ export default {
    methods:{
      onClickRight(){
        if(this.userInfo.id) {
-         this.$router.push('/userInfo')
+         this.$router.push('/Profile')
        }else{
          this.$router.push('/login/tologin')
        }

@@ -141,7 +141,7 @@
 
   .ratings
     position: absolute
-    top: 195px
+    top: 223px
     bottom: 0
     left: 0
     width: 100%

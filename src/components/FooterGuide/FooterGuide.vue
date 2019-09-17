@@ -1,11 +1,11 @@
 <template>
 <div>
-
-  <van-tabbar v-model="active" >
-  <van-tabbar-item icon="home-o" to="/home" >外卖</van-tabbar-item>
-  <van-tabbar-item icon="friends-o" to="/order">订单</van-tabbar-item>
-  <van-tabbar-item icon="search" info="" to="/search">搜索</van-tabbar-item>
-  <van-tabbar-item icon="setting-o" info="" to="/profile">我的</van-tabbar-item>
+  
+  <van-tabbar route >
+  <van-tabbar-item replace  icon="home-o" to="/home" >外卖</van-tabbar-item>
+  <van-tabbar-item replace  icon="friends-o" to="/order">订单</van-tabbar-item>
+  <van-tabbar-item replace  icon="search"  to="/search">搜索</van-tabbar-item>
+  <van-tabbar-item replace  icon="setting-o"  to="/profile" >我的</van-tabbar-item>
 </van-tabbar>
 </div>
 </template>
@@ -17,9 +17,10 @@ Vue.use(Tabbar).use(TabbarItem);
 export default {
 data() {
     return {
-      active: 0
+      
     }
   }, 
+ 
   
 }
 

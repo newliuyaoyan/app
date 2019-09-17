@@ -45,7 +45,7 @@ export default {
     // 发送异步ajax请求
     const result = await reqFoodCategorys()
     // 提交一个mutation
-    if (result.code === 0) {
+    if (result.code == 0) {
       const categorys = result.data
       commit(RECEIVE_CATEGORYS, {categorys})
     }
@@ -88,7 +88,7 @@ export default {
   // 异步获取商家信息
   async getShopInfo({commit}) {
     const result = await reqShopInfo()
-    if (result.code === 0) {
+    if (result.code == 0) {
       const info = result.data
       commit(RECEIVE_INFO, {info})
     }
@@ -97,7 +97,7 @@ export default {
   // 异步获取商家评价列表
   async getShopRatings({commit}, callback) {
     const result = await reqShopRatings()
-    if (result.code === 0) {
+    if (result.code == 0) {
       const ratings = result.data
       commit(RECEIVE_RATINGS, {ratings})
       // 数据更新了, 通知一下组件
@@ -108,7 +108,7 @@ export default {
   // 异步获取商家商品列表
   async getShopGoods({commit}, callback) {
     const result = await reqShopGoods()
-    if (result.code === 0) {
+    if (result.code == 0) {
       const goods = result.data
       commit(RECEIVE_GOODS, {goods})
       // 数据更新了, 通知一下组件
@@ -135,7 +135,7 @@ export default {
 
     const geohash = state.latitude + ',' + state.longitude
     const result = await reqSearchShop(geohash, keyword)
-    if (result.code === 0) {
+    if (result.code == 0) {
       const searchShops = result.data
       commit(RECEIVE_SEARCH_SHOPS, {searchShops})
     }

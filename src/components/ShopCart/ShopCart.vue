@@ -5,7 +5,9 @@
         <div class="content-left" @click="toggleShow">
           <div class="logo-wrapper">
             <div class="logo" :class="{highlight: totalCount}">
-              <i class="iconfont icon-shopping_cart" :class="{highlight: totalCount}"></i>
+              <i class="iconfont icon-shopping_cart" :class="{highlight: totalCount}">
+                <img src="../../assets/img/home-5.png" alt="" class="pic">
+              </i>
             </div>
             <div class="num" v-if="totalCount">{{totalCount}}</div>
           </div>
@@ -44,10 +46,13 @@
 </template>
 
 <script>
-  import { MessageBox } from 'mint-ui'
+  import Vue from 'vue';
+  import { MessageBox } from 'mint-ui';
   import BScroll from 'better-scroll'
   import {mapState, mapGetters} from 'vuex'
   import CartControl from '../CartControl/CartControl.vue'
+  Vue.component(MessageBox);
+  import '../../../node_modules/mint-ui/lib/style.css'
 
   export default {
     data () {
@@ -112,7 +117,7 @@
       },
 
       clearCart () {
-        MessageBox.confirm('确定清空购物车吗?').then(action => {
+       MessageBox.confirm('确定清空购物车吗?').then(action => {
           this.$store.dispatch('clearCart')
         }, () => {});
       }
@@ -164,6 +169,9 @@
               line-height 44px
               font-size 24px
               color #80858a
+              .pic
+               width 44px
+               height 44px
               &.highlight
                 color #fff
           .num
@@ -247,6 +255,8 @@
           float left
           font-size 14px
           color rgb(7, 17, 27)
+          line-height: 40px
+          margin: 0
         .empty
           float right
           font-size 12px
