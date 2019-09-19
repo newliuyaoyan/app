@@ -15,7 +15,7 @@
           <div class="desc">另需配送费￥{{info.deliveryPrice}}元</div>
         </div>
         <div class="content-right">
-          <div class="pay" :class="payClass">
+          <div class="pay" :class="payClass" @click="topay">
             {{payText}}
           </div>
         </div>
@@ -67,8 +67,9 @@
       payClass () {
         const {totalPrice} = this
         const {minPrice} = this.info
-
-        return totalPrice>=minPrice ? 'enough' : 'not-enough'
+        const {deliveryPrice} = this.info
+        var allPrice =totalPrice+deliveryPrice
+        return allPrice>=minPrice ? 'enough' : 'not-enough'
       },
       payText () {
         const {totalPrice} = this
@@ -115,7 +116,11 @@
           this.isShow = !this.isShow
         }
       },
-
+      topay(){
+        if(this.totalPrice>=this.info.minPrice){
+          this.$router.push('/pay')
+        }
+      },
       clearCart () {
        MessageBox.confirm('确定清空购物车吗?').then(action => {
           this.$store.dispatch('clearCart')

@@ -171,7 +171,7 @@
   .goods
     display: flex
     position: absolute
-    top: 223px
+    top: 230px
     bottom: 46px
     width: 100%
     background: #fff;

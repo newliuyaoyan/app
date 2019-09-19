@@ -39,7 +39,7 @@ export default {
      onCancel(){
        this.value=''
      },onClickLeft(){
-      history.back();
+      this.$router.push('/home')
     }
    }
 }

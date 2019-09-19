@@ -14,7 +14,9 @@
   INCREMENT_FOOD_COUNT,
   DECREMENT_FOOD_COUNT,
   CLEAR_CART,
-  RECEIVE_SEARCH_SHOPS
+  RECEIVE_SEARCH_SHOPS,
+  RECEIVE_GET_ORDER,
+  CLEAR_ORDER
  } from './mutation-types.js'
 
  export default {
@@ -84,5 +86,11 @@
 
   [RECEIVE_SEARCH_SHOPS](state, {searchShops}) {
     state.searchShops = searchShops
+  },
+  [RECEIVE_GET_ORDER](state,{getorder}){
+    state.getorder = getorder
+  },
+  [CLEAR_ORDER](state) {
+    state.getorder = {}
   },
  }

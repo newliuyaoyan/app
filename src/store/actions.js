@@ -13,7 +13,9 @@
   INCREMENT_FOOD_COUNT,
   DECREMENT_FOOD_COUNT,
   CLEAR_CART,
-  RECEIVE_SEARCH_SHOPS
+  RECEIVE_SEARCH_SHOPS,
+  RECEIVE_GET_ORDER,
+  CLEAR_ORDER
 } from './mutation-types.js'
 import {
   reqAddress,
@@ -24,7 +26,8 @@ import {
   reqShopRatings,
   reqShopGoods,
   reqShopInfo,
-  reqSearchShop
+  reqSearchShop,
+  reqOrder
 } from '../API'
 
 export default {
@@ -140,4 +143,17 @@ export default {
       commit(RECEIVE_SEARCH_SHOPS, {searchShops})
     }
   },
+
+//异步获取订单信息
+async getOrdermsg({commit}){
+  const result = await reqOrder()
+  if(result.code == 0){
+    const getorder=result.data
+    commit(RECEIVE_GET_ORDER,{getorder})
+  }
+},
+// 同步清空订单
+clearOrder({commit}) {
+  commit(CLEAR_ORDER)
+},
 }

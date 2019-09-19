@@ -2,7 +2,7 @@
   <div class="shop_container">
     <ul class="shop_list" >
       <li class="shop_li border-1px" v-for="(shop,index) in shops" :key="index"
-  @click="$router.push('/shop')">
+  @click="toshop">
         <a>
           <div class="shop_left">
             <img class="shop_img" :src="shop.pic">
@@ -51,8 +51,12 @@
 </template>
 
 <script>
+import Vue from 'vue'
   import {mapState} from 'vuex'
   import Star from '../Star/Star.vue'
+import { MessageBox } from 'mint-ui';
+Vue.component(MessageBox);
+import '../../../node_modules/mint-ui/lib/style.css'
 
   export default {
     data () {
@@ -61,10 +65,22 @@
       }
     },
     computed: {
-      ...mapState(['shops'])
+      ...mapState(['shops','userInfo'])
     },
     components: {
       Star
+    },
+    methods:{
+      toshop(){
+        if(this.userInfo.id){
+          this.$router.push('/shop')
+        }else{
+          MessageBox.confirm('请登录').then(action => {
+          
+          this.$router.push('/login/tologin')
+        }, () => {});
+        }
+      }
     }
   }
 </script>

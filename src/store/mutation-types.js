@@ -17,6 +17,6 @@ export const CLEAR_CART = 'clear_cart' // 清空购物车
 
 export const RECEIVE_SEARCH_SHOPS = 'receive_search_shops' // 接收搜索的商家数组
 
-
-
+export const RECEIVE_GET_ORDER='receive_get_order' // 接收订单信息
+export const CLEAR_ORDER = 'clear_order' // 清空订单
 

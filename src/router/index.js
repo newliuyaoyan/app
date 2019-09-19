@@ -13,6 +13,7 @@ import Shop from '../pages/Shop/Shop.vue'
 import ShopGoods from '../pages/Shop/ShopGoods/ShopGoods.vue'
 import ShopRatings from '../pages/Shop/ShopRatings/ShopRatings.vue'
 import ShopInfo from '../pages/Shop/ShopInfo/ShopInfo.vue'
+import Pay from '../pages/Pay/Pay.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ export default new VueRouter({
       meta:{
         foot:true
       }
+    },
+    {
+      path:'/pay',
+      component:Pay,
+      
     },
     {
       path:'/order',
